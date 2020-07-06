@@ -1,0 +1,484 @@
+:root {
+	--dark-grey: #21243d;
+	--light-grey: #dadada;
+	--green: #21bf73;
+}
+
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+html {
+	font-family: 'Montserrat', sans-serif;
+}
+
+/* === GENERAL === */
+h1 {
+	font-weight: 700;
+	font-size: 50px;
+	text-align: center;
+	color: var(--dark-grey);
+	margin: 20px;
+}
+
+a {
+	text-decoration: none;
+	color: #fff;
+}
+
+.container {
+	margin: auto;
+	width: 80%;
+}
+
+label {
+	color: var(--dark-grey);
+    font-size: 14px;
+	margin: 5px;
+	font-weight: 500;
+}
+
+input {
+	outline: none;
+	border: 1px solid var(--light-grey);
+	padding: 10px 5px;
+	border-radius: 10px;
+	margin-bottom: 10px;
+}
+
+textarea {
+	outline: none;
+	border: 1px solid var(--light-grey);
+	padding: 10px 5px;
+	border-radius: 10px;
+	margin-bottom: 10px;
+	resize: none;
+}
+
+select {
+	outline: none;
+	border: 1px solid var(--light-grey);
+	padding: 10px 5px;
+	border-radius: 10px;
+	margin-bottom: 10px;
+}
+
+::placeholder {
+	opacity: 0.4;
+}
+
+table {
+	border-collapse: collapse;
+	width: 100%;
+	border-radius: 10px;
+}
+
+th, td {
+	border: 1px solid var(--light-grey);
+	padding: 8px;
+}
+
+th {
+	font-weight: 500;
+	font-size: 18px;
+}
+
+td {
+	font-weight: 400;
+	font-size: 14px;
+}
+
+.w-10 {
+	width: 10%;
+}
+.w-20 {
+	width: 20%;
+}
+.w-30 {
+	width: 30%;
+}
+
+/* === HEADER === */
+
+header .container {
+	padding: 10px 0;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.logo {
+	display: flex;
+	align-items: center;
+}
+
+.logo img {
+	height: 30px;
+	margin-right: 10px
+}
+
+.logo p {
+	font-size: 30px;
+	color: var(--dark-grey);
+	font-weight: 700;
+}
+
+nav ul {
+	display: flex;
+}
+
+nav ul li {
+	list-style-type: none;
+}
+
+nav ul a {
+	font-weight: 500;
+	color: var(--dark-grey);
+	margin: 10px;
+}
+
+nav ul a:hover {
+	color: var(--green);
+}
+
+.todo-button a {
+	padding: 5px 10px;
+	border-radius: 10px;
+	border: 2px solid var(--green);
+	color: var(--dark-grey);
+	font-weight: 500;
+}
+
+.todo-button a:hover {
+	background-color: var(--green);
+	color: #fff;
+}
+
+/* === INDEX CALENDAR === */
+
+#calendar {
+	padding: 50px 0;
+}
+
+.calendar-area {
+	display: flex;
+	margin: auto;
+	max-width: 800px;
+}
+
+.calendar-left {
+	width: 25%;
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	background-color: var(--green);
+	border-top-left-radius: 20px;
+	border-bottom-left-radius: 20px;
+	padding: 20px;
+}
+
+.left-date {
+	font-size: 60px;
+	color: #fff;
+	font-weight: 500;
+}
+
+.left-day {
+	font-size: 30px;
+	color: var(--dark-grey);
+}
+
+.left-month {
+	font-size: 18px;
+	color: var(--dark-grey);
+}
+
+.set-month {
+	margin: 20px 0 10px 0;
+	width: 100%;
+}
+
+.set-month p {
+	color: var(--dark-grey);
+	margin: 10px;
+	font-weight: 500;
+	font-size: 16px;
+}
+
+.prev-month {
+	display: flex;
+	justify-content: space-between;
+}
+
+.prev-month a {
+	border-radius: 10px;
+	color: var(--green);
+	background-color: var(--dark-grey);
+	font-size: 30px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 30px;
+	height: 30px;
+}
+
+.calendar-right {
+	width: 75%;
+	background-color: var(--dark-grey);
+	border-top-right-radius: 20px;
+	border-bottom-right-radius: 20px;
+}
+
+.grid-container {
+	display: grid;
+	grid-template-columns: auto auto auto auto auto auto auto;
+  	padding: 10px;
+}
+
+.grid-item {
+	display: flex;
+	justify-content: center;
+	font-size: 30px;
+	font-weight: 400;
+	color: #fff;
+	padding: 5px;
+	margin: 10px;
+	border-radius: 10px;
+}
+
+.active-item {
+	border: 1px solid var(--green);
+}
+
+.grid-item:hover {
+	color: var(--green);
+}
+
+.days-names {
+	color: var(--green);
+}
+
+.grid-item a:hover {
+	color: var(--green);
+}
+
+
+/* === AVAILABILITY MODAL WINDOW === */
+
+/* Call modal window */
+
+.availability-window {
+	/*visibility: hidden;*/
+	background: rgba(77, 77, 77, .7);
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	z-index: +1;
+}
+
+.availability-window:target {
+	visibility: visible;
+}
+
+.availability-form-window {
+    width: 800px;
+	background-color: white;
+	border-radius: 5px;
+	padding: 10px;
+	z-index: +1;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+.close-button {
+	position: absolute;
+	top: 0;
+	right: 10px;
+}
+
+.close-button a {
+	text-decoration: none;
+	font-size: 25px;
+	font-weight: 700;
+	color: var(--main);
+}
+
+.close-button a:hover {
+	color: var(--grey);
+}
+
+.availability-form-content {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.a-area {
+	display: flex;
+	max-height: 650px;
+}
+
+.a-left {
+	width: 500px;
+	padding: 20px;
+}
+
+.a-left form {
+	display: flex;
+	flex-direction: column;
+}
+
+.a-right {
+	width: 300px;
+	padding-top: 20px;
+}
+
+.a-right p {
+	font-size: 14px;
+	font-weight: 500;
+	text-align: center;
+}
+
+.a-right-scroll {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	overflow-y: scroll;
+	max-height: 400px;
+	padding: 10px;
+	scroll-behavior: smooth;
+	border: 1px solid var(--light-grey);
+	border-radius: 10px;
+	margin: 10px;
+}
+
+.a-right-scroll a {
+	color: var(--dark-grey);
+	padding: 20px 10px;
+	border-radius: 10px;
+	border: 1px solid var(--green);
+	margin: 5px;
+	width: 200px;
+	text-align: center;
+	font-weight: 500;
+}
+
+.a-right-scroll a:hover {
+	background-color: var(--green);
+	color: #fff;
+}
+
+.a-right-scroll::-webkit-scrollbar {
+	width: 10px;
+	padding: 0 2px;
+}
+
+.a-right-scroll::-webkit-scrollbar-track {
+  padding: 2px;
+}
+
+.a-right-scroll::-webkit-scrollbar-thumb {
+  background: var(--dark-grey);
+  border-radius: 20px;
+}
+
+.submit-button {
+	margin-bottom: 20px;
+}
+
+.submit-button a {
+	border-radius: 10px;
+	background-color: var(--green);
+	padding: 10px 30px;
+	color: var(--dark-grey);
+	font-weight: 500;
+}
+
+.submit-button a:hover {
+	background-color: var(--dark-grey);
+	color: #fff;
+}
+
+/* === SEND TASK MODAL WINDOW === */
+
+/* Call modal window */
+
+.task-window {
+	visibility: hidden;
+	background: rgba(77, 77, 77, .7);
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	z-index: +1;
+}
+
+.task-window:target {
+	visibility: visible;
+}
+
+.task-form-window {
+    width: 800px;
+    max-height: 640px;
+	background-color: white;
+	border-radius: 5px;
+	padding: 10px;
+	z-index: +1;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+.close-button {
+	position: absolute;
+	top: 0;
+	right: 10px;
+}
+
+.close-button a {
+	text-decoration: none;
+	font-size: 25px;
+	font-weight: 700;
+	color: var(--main);
+}
+
+.close-button a:hover {
+	color: var(--grey);
+}
+
+.task-form-content {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.task-area {
+	display: flex;
+	flex-direction: column;
+	max-height: 650px;
+	width: 500px;
+	padding: 20px;
+}
+
+.task-area form {
+	display: flex;
+	flex-direction: column;
+}
+.mouse-a{
+    cursor: pointer;
+}
+.text-center{
+    text-align: center;
+}
